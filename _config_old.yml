@@ -1,0 +1,109 @@
+# Site settings
+theme: jekyll-theme-so-simple
+skin: "/assets/css/custom.css" # Update this if you create a custom skin
+locale: en-US
+title: "Pasta Piracy - Open Source Recipes"
+description: "Explore and share authentic Italian recipes, straight from the kitchen."
+baseurl: "" # Leave empty if deploying to GitHub Pages at the root
+url: "https://yourusername.github.io" # Update with your GitHub Pages URL
+logo: "/assets/images/logo.png" # Add your logo image path
+date_format: "%B %-d, %Y"
+read_time: true
+words_per_minute: 200
+mathjax:
+  enable: false
+
+google_fonts:
+  - name: "Playfair Display"
+    weights: "400,700"
+  - name: "Lato"
+    weights: "400,400i,700,700i"
+
+# google_analytics: "UA-XXXXXXXXX-X" # Replace with your Google Analytics ID
+disqus:
+  shortname: "pasta-piracy" # Replace with your Disqus shortname
+
+# twitter:
+#   username: "PastaPiracy" # Update with your Twitter username
+
+# Liquid
+liquid:
+  error_mode: strict
+
+# Build settings
+permalink: /:categories/:title/
+markdown: kramdown
+feed:
+  path: atom.xml
+
+# Pagination - https://jekyllrb.com/docs/pagination/
+paginate: 10
+paginate_path: /page:num/
+
+# Search
+search_full_content: false
+
+# Taxonomy pages
+category_archive_path: "/categories/#"
+tag_archive_path: "/tags/#"
+
+# Exclude from processing.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor/bundle/
+  - vendor/cache/
+  - vendor/gems/
+  - vendor/ruby/
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+  - jekyll-feed
+  - jekyll-paginate
+
+# Front Matter Defaults
+defaults:
+  # Posts defaults
+  - scope:
+      path: "_posts"
+      type: posts
+    values:
+      layout: post
+      share: true
+
+# Site Author
+author:
+  name: "Dane Tuso"
+  picture: "/assets/images/author.jpg" # Add your picture path
+  email: "dane@tuso.tech"
+  twitter: "PastaPiracy"
+  links:
+    - title: "GitHub"
+      url: "https://github.com/danetuso"
+      icon: "fab fa-github"
+    - title: "Instagram"
+      url: "https://instagram.com/yourprofile"
+      icon: "fab fa-instagram"
+    - title: "Pinterest"
+      url: "https://pinterest.com/yourprofile"
+      icon: "fab fa-pinterest"
+
+# Footer Links
+footer_links:
+  - title: "RSS Feed"
+    url: atom.xml
+    icon: "fas fa-rss-square"
+  - title: "About"
+    url: /about/
+    icon: "fas fa-info-circle"
+  - title: "Contact"
+    url: /contact/
+    icon: "fas fa-envelope"
+
+# Navigation Links
+header_pages:
+  - home.md
+  - recipes.md
+  - about.md

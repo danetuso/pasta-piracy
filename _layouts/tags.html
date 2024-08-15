@@ -1,0 +1,74 @@
+---
+layout: page
+---
+
+{{ content }}
+
+{% assign combined_tags = "" %}
+
+<!-- Combine tags from posts -->
+{% for tag in site.tags %}
+  {% assign combined_tags = combined_tags | append: tag[0] | append: "," %}
+{% endfor %}
+
+<!-- Combine tags from recipes -->
+{% for recipe in site.recipes %}
+  {% for tag in recipe.tags %}
+    {% unless combined_tags contains tag %}
+      {% assign combined_tags = combined_tags | append: tag | append: "," %}
+    {% endunless %}
+  {% endfor %}
+{% endfor %}
+
+<!-- Remove the last comma and split tags into an array -->
+{% assign combined_tags = combined_tags | split: "," | uniq | sort %}
+
+<!-- Display the tags with counts -->
+<ul class="taxonomy-index">
+  {% for tag_name in combined_tags %}
+    {% assign post_count = site.tags[tag_name] | size %}
+    {% assign recipe_count = site.recipes | where: "tags", tag_name | size %}
+    {% assign total_count = post_count | plus: recipe_count %}
+    <li>
+      <a href="#{{ tag_name | slugify }}">
+        <strong>{{ tag_name }}</strong> <span class="taxonomy-count">{{ total_count }}</span>
+      </a>
+    </li>
+  {% endfor %}
+</ul>
+
+<!-- Display posts and recipes under each tag -->
+{% for tag_name in combined_tags %}
+  <section id="{{ tag_name | slugify | downcase }}" class="taxonomy-section">
+    <h2 class="taxonomy-title">{{ tag_name }}</h2>
+
+    <!-- Display posts with the tag -->
+    {% if site.tags[tag_name] %}
+      <div class="entries-{{ page.entries_layout | default: 'list' }}">
+        {% for entry in site.tags[tag_name] %}
+          {% include entry.html %}
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <!-- Display recipes with the tag -->
+    {% assign recipes_with_tag = site.recipes | where: "tags", tag_name %}
+    {% if recipes_with_tag.size > 0 %}
+      <div class="recipe-grid">
+        {% for recipe in recipes_with_tag %}
+          <article class="recipe-card">
+            <a href="{{ recipe.url }}">
+              <h3>{{ recipe.title }}</h3>
+              <p>{{ recipe.excerpt }}</p>
+              {% if recipe.image.path %}
+                <img src="{{ recipe.image.path }}" alt="{{ recipe.title }}">
+              {% endif %}
+            </a>
+          </article>
+        {% endfor %}
+      </div>
+    {% endif %}
+
+    <a href="#page-title" class="back-to-top">{{ site.data.text[site.locale].back_to_top | default: 'Back to Top' }} &uarr;</a>
+  </section>
+{% endfor %}

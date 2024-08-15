@@ -1,0 +1,243 @@
+/* Custom Styles for Pasta Piracy */
+body {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    background-color: #f9f4ef;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Playfair Display', serif;
+    color: #6b4226; /* Terracotta */
+}
+
+a {
+    color: #556B2F; /* Olive Green */
+    text-decoration: none;
+}
+
+a:hover {
+    color: #CC704B; /* Terracotta */
+}
+
+.navbar {
+    background-color: #f9f4ef;
+    border-bottom: 2px solid #CC704B;
+}
+
+footer {
+    background-color: #6b4226;
+    color: #fff;
+}
+
+footer a {
+    color: #FFFDD0; /* Cream */
+}
+
+footer a:hover {
+    color: #CC704B; /* Terracotta */
+}
+
+/* Recipe Card Styles */
+.recipe-list .recipe-card,
+.recipe-grid .recipe-card {
+    border: 1px solid #ccc;
+    padding: 15px;
+    margin-bottom: 20px;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    text-align: center;
+}
+
+.recipe-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.recipe-card img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.recipe-card h2,
+.recipe-card h3 {
+    font-family: 'Playfair Display', serif;
+    font-size: 24px;
+    color: #6b4226; /* Terracotta */
+    margin: 15px 0 10px;
+}
+
+.recipe-card p {
+    font-family: 'Lato', sans-serif;
+    color: #333;
+    padding: 0 15px 15px;
+}
+
+.recipe-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Comment Section */
+.comment-section {
+    border-top: 2px solid #CC704B;
+    padding-top: 20px;
+}
+
+.comment-section h3 {
+    font-family: 'Playfair Display', serif;
+    color: #6b4226;
+}
+
+.comment-section textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    margin-bottom: 10px;
+    border-radius: 5px;
+}
+
+/* Restrict image size and crop in recipes */
+.recipe-card img, 
+.page-content img {
+    width: 100%;
+    max-width: 800px;
+    height: 450px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin: 15px 0;
+}
+
+/* Hero Section as Background Image */
+.hero {
+    position: relative;
+    width: 100%;
+    height: 70vh; /* Adjust height as needed */
+    background-image: url('/assets/images/hero.webp');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Start content from the top */
+    text-align: center;
+    padding-top: 5vh; /* Push content down from the top */
+    margin-bottom: 50px; /* Space below the hero section */
+}
+
+/* Positioning the Logo and Text in Front of the Hero Image */
+.hero-logo {
+    margin-bottom: 1.5rem; /* Reduced space between the logo and the text */
+}
+
+.hero-logo img {
+    width: 18vw; /* Slightly smaller logo */
+    max-width: 130px; /* Adjust max-width as needed */
+    height: auto;
+    border-radius: 50%;
+    border: 5px solid #556B2F;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-logo img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
+}
+
+.hero-content {
+    color: #fff;
+    text-shadow: 0px 0px 10px rgba(0, 0, 0, 0.7);
+    margin-top: -2vh; /* Pulls the content upwards */
+}
+
+.hero-content h1 {
+    font-family: 'Playfair Display', serif;
+    color: #f7eac9;
+    font-size: 2.8rem; /* Slightly smaller font size */
+    margin-bottom: 0.5rem; /* Reduced space below the title */
+}
+
+.hero p {
+    font-size: 1.4rem;
+    margin: 0.5rem 0 1rem;
+}
+
+.hero .cta-button {
+    background-color: #CC704B;
+    color: #fff;
+    padding: 1rem 2rem;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1rem;
+    display: inline-block;
+    transition: background-color 0.3s ease;
+}
+
+.hero .cta-button:hover {
+    background-color: #6b4226;
+}
+
+/* Adjust margin for sections below hero */
+.landing-page-content .intro,
+.landing-page-content .features {
+    padding: 20px 5%;
+    text-align: center;
+}
+
+.landing-page-content .intro {
+    margin-top: 50px;
+}
+
+.landing-page-content .features {
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .hero {
+        height: 50vh;
+        padding-top: 8vh; /* Adjust for smaller screens */
+    }
+
+    .hero-logo img {
+        width: 25vw;
+        max-width: 110px;
+    }
+
+    .hero-content h1 {
+        font-size: 2.3rem;
+    }
+
+    .hero p {
+        font-size: 1.2rem;
+    }
+
+    .hero .cta-button {
+        font-size: 1rem;
+        padding: 0.8rem 1.5rem;
+    }
+}
+
+/* Learn More Button Style */
+.intro .cta-button {
+    display: inline-block;
+    padding: 10px 20px;
+    border: 2px solid #556B2F; /* Olive Green border */
+    color: #556B2F; /* Olive Green text color */
+    background-color: transparent; /* No background color */
+    border-radius: 10px; /* Rounded corners */
+    text-align: center;
+    text-decoration: none;
+    font-size: 1rem;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+.intro .cta-button:hover {
+    border-color: #CC704B; /* Terracotta border on hover */
+    color: #CC704B; /* Terracotta text on hover */
+    background-color: transparent; /* Keep background transparent */
+}
