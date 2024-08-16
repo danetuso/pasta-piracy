@@ -94,7 +94,9 @@
 
         // Ensure correct base URL is used for search result links on GitHub Pages
         if (window.location.hostname === "danetuso.github.io" || window.location.hostname === "www.pastapiracy.com") {
-          itemUrl = siteBaseurl + itemUrl;
+          const baseUrl = "https://danetuso.github.io";
+          const newBaseUrl = "https://www.pastapiracy.com";
+          itemUrl = itemUrl.replace(baseUrl, newBaseUrl);
         }
 
         var searchitem =
@@ -110,6 +112,7 @@
       }
     });
   });
+  // https://www.pastapiracy.com/pasta-piracyhttps://danetuso.github.io/recipes/bacon-pasta/
   </script>
   
   
