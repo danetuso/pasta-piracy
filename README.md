@@ -16,3 +16,13 @@ bundle install
 bundle install
 bundle exec jekyll serve
 ```
+
+### Todo:
+- seo
+- disqus account for comments
+- gallery / photo collection at bottom of each recipe
+- replace ai generated photos
+- put tag line for people to submit photos, with submission email
+- abuse / request for removal email / tagline / footer
+- batch daily upload mechanism (git add / git commit / git push / git merge once per day, from folder of approved markdown recipe files)
+- pipeline
