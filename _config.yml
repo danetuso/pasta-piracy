@@ -1,5 +1,5 @@
 # Site settings
-theme: jekyll-theme-so-simple
+remote_theme: "mmistakes/so-simple-theme@3.2.0"
 skin: "/assets/css/custom.css" # Update this if you create a custom skin
 locale: en-US
 title: "Pasta Piracy - Open Source Recipes"
@@ -47,14 +47,11 @@ tag_archive_path: "/tags/#"
 # Exclude from processing.
 # The following items will not be processed, by default. Create a custom list
 # to override the default setting.
-# exclude:
-#   - Gemfile
-#   - Gemfile.lock
-#   - node_modules
-#   - vendor/bundle/
-#   - vendor/cache/
-#   - vendor/gems/
-#   - vendor/ruby/
+exclude:
+  - markup.md
+  - CHANGELOG.md
+  - README.md
+  - README-OLD.md
 
 plugins:
   - jekyll-seo-tag
