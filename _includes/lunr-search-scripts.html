@@ -53,9 +53,9 @@
       this.field('categories')
       this.field('tags')
       this.ref('id')
-
+  
       this.pipeline.remove(lunr.trimmer)
-
+  
       // add documents to index
       for (var item in store) {
         this.add({
@@ -67,10 +67,10 @@
         })
       }
     });
-
-    console.log(jQuery.type(idx));
-
+  
     $(document).ready(function () {
+      var baseurl = "{{ site.baseurl | default: 'pasta-piracy/' }}"; // Get baseurl from config
+  
       $('input#search').on('keyup', function () {
         var resultdiv = $('#results');
         var query = $(this).val().toLowerCase();
@@ -93,7 +93,7 @@
           var searchitem =
             '<article class="entry">' +
               '<h3 class="entry-title">' +
-                '<a href="' + store[ref].url + '">' + store[ref].title + '</a>' +
+                '<a href="' + baseurl + store[ref].url + '">' + store[ref].title + '</a>' +
               '</h3>' +
               '<div class="entry-excerpt">' +
                 '<p>' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
@@ -104,3 +104,4 @@
       });
     });
   </script>
+  
