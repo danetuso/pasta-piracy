@@ -36,8 +36,8 @@ var store = [
         {%- endif -%}
         "categories": {{ doc.categories | jsonify }},
         "tags": {{ doc.tags | jsonify }},
-        "url": {{ doc.url | absolute_url | jsonify }}
+        "url": {{ doc.url | absolute_url | jsonify }} // Using absolute_url here ensures that the correct URL is always used.
       } {%- unless forloop.last and l -%}, {%- endunless -%}
     {%- endfor -%}
   {%- endfor -%}
-]
+];
