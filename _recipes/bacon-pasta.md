@@ -1,13 +1,21 @@
 ---
 title: "Bacon Pasta"
+description: Indulge in the rich, savory flavors of this Roman-inspired Bacon Tomato Pasta. Combining the crispiness of Italian bacon with the sweetness of cherry tomatoes and a hint of red wine, this dish is a delightful balance of robust tastes and comforting textures. Perfectly paired with your favorite pasta, the sauce clings to every bite, offering a satisfying meal that's both hearty and elegant. Whether you're preparing a quick weeknight dinner or a special weekend feast, this Bacon Pasta is sure to impress with its simple yet sophisticated flavors.
 tags: [roman, pasta, tomato-based, bacon]
 image: 
   path: /assets/images/bacon_pasta_background_lg.webp
   thumbnail: /assets/images/bacon_pasta_background_thumbnail.png
   caption: "Bacon Pasta"
+servings: 4
+cook_time: "30 minutes"
 ---
 
-## Roman-Inspired Bacon Tomato Pasta
+<p>{{ page.description }}</p>
+
+<div class="recipe-details">
+    <p><strong>Servings:</strong> {{ page.servings }}</p>
+    <p><strong>Cook-time:</strong> {{ page.cook_time }}</p>
+</div>
 
 ### Ingredients
 - 8 oz Italian bacon (such as guanciale or pancetta), cut into small chunks

@@ -220,6 +220,15 @@ footer a:hover {
         font-size: 1rem;
         padding: 0.8rem 1.5rem;
     }
+
+    .image-row {
+        flex-direction: column;
+    }
+
+    .image-row img {
+        max-width: 100%;
+        margin-bottom: 10px;
+    }
 }
 
 /* Learn More Button Style */
@@ -240,4 +249,50 @@ footer a:hover {
     border-color: #CC704B; /* Terracotta border on hover */
     color: #CC704B; /* Terracotta text on hover */
     background-color: transparent; /* Keep background transparent */
+}
+
+.image-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px; /* Space between images */
+    margin-bottom: 20px; /* Space below the row */
+}
+
+.image-row img {
+    flex: 1;
+    max-width: 48%; /* Adjust to control the size */
+    height: auto;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+/* Updated Recipe Page Details */
+.recipe-details {
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    border-left: 3px solid #CC704B; /* Softer Terracotta border */
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+    max-width: 85%; /* Smaller width */
+    font-size: 0.9rem; /* Slightly smaller text */
+    color: #555; /* Softer gray text */
+    transition: all 0.3s ease; /* Smooth transition for any future interactions */
+}
+
+.recipe-details h1 {
+    font-family: 'Playfair Display', serif;
+    color: #6b4226;
+    font-size: 2rem;
+    margin-bottom: 8px;
+}
+
+.recipe-details p {
+    margin: 2px 0; /* Smaller margins for compact spacing */
+    font-size: 0.9rem; /* Consistent font size */
+    color: #333; /* Darker gray text for the main content */
+}
+
+.recipe-details strong {
+    color: #6b4226; /* Terracotta for the labels */
 }
