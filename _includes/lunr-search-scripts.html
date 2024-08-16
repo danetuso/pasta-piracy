@@ -47,7 +47,7 @@
         // use the language
         this.use(lunr.{{ lang }});
       {% endunless %}
-      // the, the normal lunr index initialization
+      // the normal lunr index initialization
       this.field('title')
       this.field('excerpt')
       this.field('categories')
@@ -69,7 +69,7 @@
     });
   
     $(document).ready(function () {
-      var baseurl = "{{ site.baseurl | default: 'pasta-piracy/' }}"; // Get baseurl from config
+      var baseurl = "{{ site.baseurl | default: '' }}"; // Get baseurl from config
   
       $('input#search').on('keyup', function () {
         var resultdiv = $('#results');
@@ -90,10 +90,15 @@
         resultdiv.prepend('<p class="results__found">' + result.length + ' {{ site.data.text[site.locale].results_found | default: "Result(s) found" }}</p>');
         for (var item in result) {
           var ref = result[item].ref;
+          var itemUrl = store[ref].url;
+  
+          // Check if URL is absolute (starts with http:// or https://)
+          var fullUrl = itemUrl.startsWith('http://') || itemUrl.startsWith('https://') ? itemUrl : baseurl + itemUrl;
+  
           var searchitem =
             '<article class="entry">' +
               '<h3 class="entry-title">' +
-                '<a href="' + baseurl + store[ref].url + '">' + store[ref].title + '</a>' +
+                '<a href="' + fullUrl + '">' + store[ref].title + '</a>' +
               '</h3>' +
               '<div class="entry-excerpt">' +
                 '<p>' + store[ref].excerpt.split(" ").splice(0, 20).join(" ") + '...</p>' +
